@@ -1,0 +1,113 @@
+body {
+    background-color: rgb(124, 255, 137);
+    margin: 0;
+    padding: 0;
+}
+
+/* контент */
+.conteiner {
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.button {
+    width: 350px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Изображение заполняет весь блок */
+    border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+/* поля ввода */
+.upload-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.upload-field {
+    margin-bottom: 20px;
+}
+
+.upload-field label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.upload-field input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+}
+
+.upload-field input[type="file"]:hover {
+    border-color: #007bff;
+}
+
+.upload-field input[type="file"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.upload-field input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fafafa;
+    font-size: 16px;
+}
+
+.upload-field input[type="text"]:hover {
+    border-color: #007bff;
+}
+
+.upload-field input[type="text"]:focus {
+    outline: none;
+    border-color: #007bff;
+}

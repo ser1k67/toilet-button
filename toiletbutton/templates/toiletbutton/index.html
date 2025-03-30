@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toilet voices</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    {% comment %} поля загрузки {% endcomment %}
+    <form action="{% url 'toilet' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="upload-container">
+            <h1>Загрузите изображение и аудио</h1>
+            
+            <div class="upload-field">
+                <label for="audio-author">Имя пользователя</label>
+                <input type="text" id="audio-author" name="audio-author" placeholder="Введите имя пользователя" required>
+            </div>
+
+            <div class="upload-field">
+                <label for="audio-name">Имя аудио</label>
+                <input type="text" id="audio-name" name="audio-name" placeholder="Введите имя аудио" required>
+            </div>
+
+            <div class="upload-field">
+                <label for="image-upload">Загрузить изображение</label>
+                <input type="file" id="image-upload" name="image" accept="image/*" required>
+            </div>
+
+            <div class="upload-field">
+                <label for="audio-upload">Загрузить аудио</label>
+                <input type="file" id="audio-upload" name="audio" accept="audio/*" required>
+            </div>
+
+            <div class="upload-field">
+                <button type="submit">Загрузить</button>
+            </div>
+        </div>
+    </form>
+    
+    {% comment %} контент {% endcomment %}
+    
+    <div class="conteiner">
+        {% for tb in toiletbutton %}
+            <button class="button button-blue" onclick="playAudio('{{ tb.sound.url }}');">
+                <img src="{{ tb.image.url }}" width="350" height="300" alt="unitaz">
+            </button>
+        {% endfor %}
+    </div>
+    
+
+    <script type="text/javascript">
+        function playAudio(audioUrl) {
+            const audio = new Audio(audioUrl); // Загружаем аудио для каждой кнопки
+            audio.play(); // Воспроизводим звук
+        }
+    </script>
+</body>
+</html>
